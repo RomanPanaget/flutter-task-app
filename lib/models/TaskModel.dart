@@ -1,9 +1,15 @@
 import 'package:uuid/uuid.dart';
 
 class TaskModel {
-  TaskModel([this._title, this._done = false]) {
+  TaskModel(this._title, this._done) {
     var uuid = new Uuid();
     this._id = uuid.v4();
+  }
+
+  TaskModel.fromMap(map) {
+    this._id = map['id'];
+    this._title = map['title'];
+    this._done = map['done'];
   }
 
   String _id;

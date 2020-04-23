@@ -108,7 +108,7 @@ class _EditTasksListPageState extends State<EditTasksListPage> {
                       controller: controller,
                       focusNode: newTaskFocusNode,
                       onPressed: (String newTask) => setState(() {
-                            _tasks.insert(0, TaskModel(newTask));
+                            _tasks.insert(0, TaskModel(newTask, false));
                           })),
                   ListView.builder(
                     itemBuilder: (context, index) => TaskRow(

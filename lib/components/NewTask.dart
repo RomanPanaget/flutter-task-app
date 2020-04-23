@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:developer';
 
 class NewTask extends StatefulWidget {
   NewTask({@required this.controller, @required this.onPressed, @required this.focusNode});

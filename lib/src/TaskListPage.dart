@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertaskapp/components/TaskRow.dart';
@@ -51,7 +49,6 @@ class _TaskListPageState extends State<TaskListPage> {
                   _taskList = taskList;
                 });
               }
-              ;
             },
           )
         ],

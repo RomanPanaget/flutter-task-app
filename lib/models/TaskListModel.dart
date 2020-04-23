@@ -1,11 +1,14 @@
+import 'dart:convert';
+
 import 'package:fluttertaskapp/models/TaskModel.dart';
 import 'package:uuid/uuid.dart';
 
 class TaskListModel {
-  TaskListModel([this._title, this._description, this._tasks]) {
+  TaskListModel(this._title, this._description, this._tasks) {
     var uuid = new Uuid();
     this.id = uuid.v4();
   }
+  TaskListModel.fromDatabase(this.id, this._title, this._description, this._tasks);
 
   String id;
   String _title;
@@ -31,6 +34,6 @@ class TaskListModel {
         "id": id,
         "title": _title,
         "description": _description,
-        "tasks": _tasks.map((task) => task.toMap()).toList()
+        "tasks": jsonEncode(_tasks.map((task) => task.toMap()).toList())
       };
 }

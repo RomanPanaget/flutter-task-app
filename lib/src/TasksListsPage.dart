@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:fluttertaskapp/models/TaskListModel.dart';
 import 'package:fluttertaskapp/models/TaskListsModel.dart';
@@ -28,7 +26,6 @@ class _TasksListsPageState extends State<TasksListsPage> {
             MaterialPageRoute(
                 builder: (context) =>
                     TaskListPage(taskList: taskList)));
-        print("taskLists updated");
         taskLists.update(updatedTaskList);
       },
     );

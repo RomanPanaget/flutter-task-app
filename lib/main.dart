@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertaskapp/models/TaskListModel.dart';
 import 'package:fluttertaskapp/models/TaskListsModel.dart';
-import 'package:fluttertaskapp/src/TasksListsPage.dart';
+import 'package:fluttertaskapp/src/SplashPage.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(
       ChangeNotifierProvider(
-        create: (context) => TaskListsModel([TaskListModel("Title", "Description", [])]),
+        create: (context) => TaskListsModel(),
         child: MyApp(),
       ),
     );
@@ -20,14 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TasksListsPage(title: 'Flutter Tasks Lists'),
+      home: SplashPage(),
     );
   }
-}
-
-class TaskList {
-  TaskList(this.title, this.description);
-
-  String title;
-  String description;
 }
